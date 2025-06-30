@@ -1,9 +1,11 @@
-sample_set = {"Yellow", "Orange", "Black"}
-sample_list = ["Blue", "Green", "Red"]
+def list():
+    sample_set = {"Yellow", "Orange", "Black"}
+    sample_list = ["Blue", "Green", "Red"]
 
-sample_set.update(sample_list)
-sample_set = {item.lower() for item in sample_set}
+    sample_set.update(sample_list)
+    sample_set = {item.lower() for item in sample_set}
+    sorted_list = sorted(sample_set)
 
-print(sample_set)
+    return (sorted_list)
 
-
+print(list())
