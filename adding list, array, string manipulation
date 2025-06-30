@@ -1,4 +1,4 @@
-def list():
+def list_colors():
     sample_set = {"Yellow", "Orange", "Black"}
     sample_list = ["Blue", "Green", "Red"]
 
@@ -8,4 +8,4 @@ def list():
 
     return (sorted_list)
 
-print(list())
+print(list_colors())
