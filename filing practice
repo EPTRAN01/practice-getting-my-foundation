@@ -1,3 +1,4 @@
+import csv
 
 def input_user():
     city = input("please enter a city: ")
@@ -7,11 +8,10 @@ def weather_temp(city, month):  #the whole function gets me the for loop that go
     f = open("weather_temp(3).csv", "r") #reader
     lines = f.readlines()
     for line in lines:    #for loop for the whole list
-        row = line.strip().split(",") #this gives me ['city', 'month', 'high', 'low']
-        if row[0].lower == city.lower() and row[2].lower == month.lower()
-            print(row[3]["high"])
-            print(row[4]["low"])
-        f.close()
+        row = line.strip().split(",") #this gives me ['city', 'month', 'high', 'low'], if i wanted to create a dictionary i can create a dict making :city": to the actual row[i] value/ but its the same thing as row[i]
+        if row[0].lower() == city.lower() and row[1].lower() == month.lower():
+            print("The average high is: ", row[2], "and the average low is: ", row[3])
+    f.close()
 
 
 
