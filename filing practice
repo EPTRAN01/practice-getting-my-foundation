@@ -1,0 +1,24 @@
+
+def input_user():
+    city = input("please enter a city: ")
+    month = input("Please enter a month: ")
+
+def weather_temp(city, month):
+    f = open("weather_temp(3).csv", "r") #reader
+    lines = f.readlines()
+    for line in lines:    #for loop for the whole list
+        row = line.strip().split(",") #this gives me ['city', 'month', 'high', 'low']
+        row[i] = dict{"city", "month", "high", "low"}
+        if row[i]["city"] == city and row[i]["month"] == month
+            print(row[i]["high"])
+            print(row[i]["low"])
+        else
+            i++
+
+row == city and row = month
+
+
+if row[0].lower() == city.lower() and row[1].lower() == month.lower():
+            print("High:", row[2])
+            print("Low:", row[3])
+    f.close()
