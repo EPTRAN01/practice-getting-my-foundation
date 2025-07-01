@@ -1,22 +1,26 @@
 import csv
-
 def input_user():
-    city = input("please enter a city: ")
-    month = input("Please enter a month: ")
+    city = input("please enter a city: ").strip()
+    month = input("Please enter a month: ").strip()
     return(city, month)
 
 def weather_temp(city, month):  #the whole function gets me the for loop that goes down each row, then if the condition is true it will print the value and close the file
-    with open("weather_temps (3).csv", "r") as f: #reader
-        lines = f.readlines()
-        for line in lines:  #for loop for the whole list
-            row = line.strip().split(",")  #this gives me ['city', 'month', 'high', 'low'], if i wanted to create a dictionary i can create a dict making :city": to the actual row[i] value/ but its the same thing as row[i]
+    found = False
+    with open("weather_temps (3).csv", "r", newline='') as f: #reader, with open where it automatically does it for me
+        reader = csv.reader(f)  #this is a more efficent way then the split,
+        next(reader, None)  #skip header
+        for row in reader:  #for loop for the whole list
+            row = [field.strip() for field in row]
             if row[0].lower() == city.lower() and row[1].lower() == month.lower():
                 print("The average high is:", row[2], "and the average low is:", row[3])
-        f.close()
+                found = True
+                break
+    if not found:
+        print("no data available")
 
 
 
 
-
-city, month = input_user()
-weather_temp(city, month)
+if __name__ == "__main__":  #a guard
+    city, month = input_user()
+    weather_temp(city, month)
