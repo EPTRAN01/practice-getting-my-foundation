@@ -1,0 +1,24 @@
+def user_input():
+
+    nums = []
+    while True: #infinite loop
+        entry = input("enter a numbers(type 'done'): ")
+        if entry == 'done':
+            target = input("target number?: ")
+            break
+        nums.append(int(entry)) #should be able to add to the list nums[]
+    return nums, int(target) #returns the list and target number needed
+
+def function(nums, target):
+    i = 0
+    for j in nums:
+        j = 0
+        nums[i] + nums[0+j]
+        if nums[i] + nums[0+j] != target:
+            j+=1
+        else:
+            i+=1
+
+
+
+
