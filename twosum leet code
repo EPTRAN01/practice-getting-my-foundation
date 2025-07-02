@@ -1,22 +1,6 @@
-def user_input():
-    nums = []
-    entries = input("enter a numbers(seperated by space): ")
-    nums = list(map(int, entries.split()))  #the list makes it so i dont need append, and the map lets it become a map object which is more efficent and fast, while split just converts the string
-    target = int(input("target number?: "))
-    return nums, int(target) #returns the list and target number needed
-
-def find_indexs(nums, target):
-    for i in range(len(nums)): #the for loops repeats for the length of the list using the len function
-        for j in range(i + 1, len(nums)): #nested for loop for the approach as two numbers needed to be increased
-            if nums[i] + nums[j] == target:
-                return [i, j] #now returns the index values
-    return None
-
-
-if __name__ == '__main__':
-    nums, target = user_input()
-    result = find_indexs(nums, target)
-    if result:
-        print("output:", list(result))  #since im returning a tuple i have to get the two values through this, but through list it shopuld give the needed output. More clean here.
-    else:
-        print("no match found")
+class Solution(object):
+    def twoSum(self, nums, target):
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
