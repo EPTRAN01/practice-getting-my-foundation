@@ -1,6 +1,12 @@
 class Solution(object):
-    def twoSum(self, nums, target):
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+    def twosum(self, nums, target):
+        hashmap = {}  # stores seen numbers and their indices
+        for i, num in enumerate(nums):  # loop with access to both index and value, this pairs it easily instead of len(nums) loop
+            complement = target - num  # find the number needed to reach the target
+            if complement in hashmap:  # if that number was seen before, return the pair
+                return [hashmap[complement], i]
+            hashmap[num] = i  # store current number and its index, adding to the dictionary its syntax
+
+
+
+
