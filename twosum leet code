@@ -1,5 +1,5 @@
 class Solution(object):
-    def twosum(self, nums, target):
+    def twoSum(self, nums, target):
         hashmap = {}  # stores seen numbers and their indices
         for i, num in enumerate(nums):  # loop with access to both index and value, this pairs it easily instead of len(nums) loop
             complement = target - num  # find the number needed to reach the target
