@@ -10,15 +10,10 @@ def user_input():
     return nums, int(target) #returns the list and target number needed
 
 def function(nums, target):
-    i = 0
-    for j in nums:
-        j = 0
-        nums[i] + nums[0+j]
-        if nums[i] + nums[0+j] != target:
-            j+=1
-        else:
-            i+=1
-
+    for i in range(len(nums)): #the for loops repeats for the length of the list using the len function
+        for j in range(i + 1, len(nums)): #nested for loop for the approach as two numbers needed to be increased
+            if nums[i] + nums[j] == target:
+                return (nums[i], nums[j])
 
 
 
