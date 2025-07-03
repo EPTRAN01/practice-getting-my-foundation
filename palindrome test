@@ -2,19 +2,22 @@ def input_user():
     x = int(input("x?: "))
     return x
 def value_checker(x):
-    array = list(str(x))
-    length = len(array)
-    mid_index = len(array) // 2
+    array = list(str(x)) #converts it into a string
+    length = len(array) #gets the length of the array
+    mid_index = len(array) // 2 #finds the middle
     if length % 2 == 0: #since it gives a remainder, if its zero it means its even and had a mid num
         first_half = array[:mid_index] #this gives number up to mid without the mid number
-        second_half = array[:mid_index]
+        second_half = array[mid_index:] #mid to end num
     else:
-        break
-        # For odd-length strings, skip the middle element
         first_half = array[:mid_index]
-        second_half = array[mid_index + 1:]
+        second_half = array[mid_index + 1:] #since its odd i just compare two middles
 
     if first_half == second_half[::-1]:
         print("Value is a palindrome")
     else:
         print("Value is NOT a palindrome")
+
+if __name__ == '__main__':
+    x = input_user()
+    value_checker(x)
+
