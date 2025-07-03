@@ -1,8 +1,12 @@
 class Solution(object):
     def isPalindrome(self, x):
-        """
-        :type x: int
-        :rtype: bool
-        """
-        x_str = str(x)
-        return x_str == x_str[::-1]
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
+
+        reverted = 0
+        while x > reverted:
+            last_digit = x % 10
+            reverted = reverted * 10 + last_digit
+            x //= 10
+
+        return x == reverted or x == reverted // 10
