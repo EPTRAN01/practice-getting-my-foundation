@@ -1,18 +1,8 @@
 class Solution(object):
     def isPalindrome(self, x):
-        array = list(str(x))  # converts it into a string
-        length = len(array)  # gets the length of the array
-        mid_index = len(array) // 2  # finds the middle
-        if length % 2 == 0:  # since it gives a remainder, if its zero it means its even and had a mid num
-            first_half = array[:mid_index]  # this gives number up to mid without the mid number
-            second_half = array[mid_index:]  # mid to end num
-        else:
-            first_half = array[:mid_index]
-            second_half = array[mid_index + 1:]  # since its odd i just compare two middles
-        return first_half == second_half[::-1]
-
-
-
-
-
-
+        """
+        :type x: int
+        :rtype: bool
+        """
+        x_str = str(x)
+        return x_str == x_str[::-1]
