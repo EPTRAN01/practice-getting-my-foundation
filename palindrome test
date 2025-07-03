@@ -1,0 +1,16 @@
+def input_user():
+    x = int(input("x?: ")) #gets input making sure its an integer
+    return x #returns the value for the outside
+def value_checker(x):
+    array = list(str(x)) #converts the integer into string so if its 111 it would be "1""1""1"
+    if array[1] == array[-1]: #checks the first number and the last number to see if it matches
+        mid_index = len(array) // 2 #makes a value of mid_index the purpose for this is if its a decimal that means there is a middle
+        for item, value in enumerate(array): #creating a quick dictionary and key matching the array and its value
+            if item == mid_index: #if the key somehow matches the mid_index it means its even so theres no middle
+                print("value is false")
+                return
+        print("value is true")
+
+if __name__ == '__main__':
+    x = input_user()
+    value_checker(x)
