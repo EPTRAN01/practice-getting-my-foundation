@@ -17,19 +17,24 @@ def input_user():
 
 
 
-if I + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "V":
+if i + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "V":
 # I is before V ignore V and I and make into value 4
-if I + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "X":
+if i + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "X":
 # I is before X ignore it value 9
-if I + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "L":
+if i + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "L":
 # X is before ignore it value 40
-if I + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "C":
+if i + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "C":
 # X is placed before ignore it value 90
-if I + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "D":
+if i + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "D":
 # C placed before ignore it value 400
-if I + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "M":
+if i + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "M":
 # C placed before ignore it value 900
-broken[:V]
+
+
+
+
+
+
     if #I is before V ignore V and I and make into value 4
 broken[:X]
     if #I is before X ignore it value 9
@@ -44,9 +49,20 @@ broken[:M]
 #read from left to right
 
 
-for i, val in enumerate(broken):
-    broken[i]
-    if broken in index:
-        index.get(i)
+for i in range(len(broken)-1):
+    if broken[i:i + 2] == ["I", "V"]:
+
+    if broken[i:i + 2] == ["I", "X"]:
+
+    if broken[i:i + 2] == ["X", "L"]:
+
+    if broken[i:i + 2] == ["X", "C"]:
+
+    if broken[i:i + 2] == ["C", "D"]:
+
+    if broken[i:i + 2] == ["C", "M"]:
+
+
+
 
 
