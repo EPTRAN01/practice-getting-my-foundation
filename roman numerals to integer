@@ -1,0 +1,52 @@
+
+index = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+}
+
+
+def input_user():
+    s = str(input("roman?: "))
+    broken = list(s)
+    return broken
+
+
+
+if I + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "V":
+# I is before V ignore V and I and make into value 4
+if I + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "X":
+# I is before X ignore it value 9
+if I + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "L":
+# X is before ignore it value 40
+if I + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "C":
+# X is placed before ignore it value 90
+if I + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "D":
+# C placed before ignore it value 400
+if I + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "M":
+# C placed before ignore it value 900
+broken[:V]
+    if #I is before V ignore V and I and make into value 4
+broken[:X]
+    if #I is before X ignore it value 9
+broken[:L]
+    If #X is before ignore it value 40
+broken[:C]
+    if #X is placed before ignore it value 90
+broken[:D]
+    if #C placed before ignore it value 400
+broken[:M]
+    if #C placed before ignore it value 900
+#read from left to right
+
+
+for i, val in enumerate(broken):
+    broken[i]
+    if broken in index:
+        index.get(i)
+
+
