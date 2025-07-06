@@ -8,12 +8,14 @@ class Solution(object):
             "XL": 40, "XC": 90,
             "CD": 400, "CM": 900
         }
-i = 0
-total = 0
-while i < len(s):
-    if i + 1 < len(s) and s[i:i+2] in index:
-        total += index[s[i:i+2]]
-        i += 2
-    else:
-        total += index[s[i]
-        i += 1
+        
+        i = 0
+        total = 0
+        while i < len(s):
+            if i + 1 < len(s) and s[i:i+2] in index:
+                total += index[s[i:i+2]]
+                i += 2
+            else:
+                total += index[s[i]]
+                i += 1
+        return total
