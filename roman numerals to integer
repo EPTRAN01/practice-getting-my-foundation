@@ -7,10 +7,10 @@ class Solution(object):
         }
         i = 0
         total = 0
-        while i < len(s):
+        while i < len(s): #the loop
             # Check for subtractive case
-            if i + 1 < len(s) and index[s[i]] < index[s[i + 1]]:
-                total += index[s[i + 1]] - index[s[i]]
+            if i + 1 < len(s) and index[s[i]] < index[s[i + 1]]:  #the first part make sure it doesnt go past the list and the second part gets the subrtractive case.
+                total += index[s[i + 1]] - index[s[i]]  #adds to the value
                 i += 2  # skip both characters
             else:
                 total += index[s[i]]
