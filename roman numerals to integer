@@ -8,17 +8,12 @@ class Solution(object):
             "XL": 40, "XC": 90,
             "CD": 400, "CM": 900
         }
-        broken = list(s)
-        value = 0
-        i = 0
-        while i < len(broken) - 1:
-            pair = "".join(broken[i:i+2])
-            if pair in index:
-                value += index[pair]
-                del broken[i:i+2]
-            else:
-                i += 1
-        for char in broken:
-            value += index.get(char, 0)
-
-        return value
+i = 0
+total = 0
+while i < len(s):
+    if i + 1 < len(s) and s[i:i+2] in index:
+        total += index[s[i:i+2]]
+        i += 2
+    else:
+        total += index[s[i]
+        i += 1
