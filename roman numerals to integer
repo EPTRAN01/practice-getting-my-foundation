@@ -44,7 +44,7 @@ def special_value(broken):
             value += index.get("CM")
             del broken[i:i+2]
         else:
-            break
+            i += 1
     return value
 
 
