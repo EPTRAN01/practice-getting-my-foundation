@@ -1,60 +1,24 @@
+class Solution(object):
+    def romanToInt(self, s):
+        index = {
+            "I": 1, "V": 5, "X": 10,
+            "L": 50, "C": 100,
+            "D": 500, "M": 1000,
+            "IV": 4, "IX": 9,
+            "XL": 40, "XC": 90,
+            "CD": 400, "CM": 900
+        }
+        broken = list(s)
+        value = 0
+        i = 0
+        while i < len(broken) - 1:
+            pair = "".join(broken[i:i+2])
+            if pair in index:
+                value += index[pair]
+                del broken[i:i+2]
+            else:
+                i += 1
+        for char in broken:
+            value += index.get(char, 0)
 
-index = { #the dictionary for the reference
-    "I": 1,
-    "V": 5,
-    "X": 10,
-    "L": 50,
-    "C": 100,
-    "D": 500,
-    "M": 1000,
-    "IV": 4,
-    "IX": 9,
-    "XL": 40,
-    "XC": 90,
-    "CD": 400,
-    "CM": 900
-}
-
-
-def input_user(): #userinput
-    s = str(input("roman?: "))
-    broken = list(s) #makes the characters into an array or list
-    return broken
-
-def special_value(broken):
-    value = 0 #starts the value at 0
-    i = 0 #starts the loop at zero
-    while i < len(broken) - 1: #this allows it to adapt to the mutated list as it goes through the special pairs
-        if broken[i:i + 2] == ["I", "V"]:
-            value += index.get("IV")
-            del broken[i:i+2]
-        if broken[i:i + 2] == ["I", "X"]: #if statement finding the pair with slicing
-            value += index.get("IX") #adds the special pair to the value
-            del broken[i:i+2] #this modifies/mutates the list deleting the special character
-        if broken[i:i + 2] == ["X", "L"]:
-            value += index.get("XL")
-            del broken[i:i+2]
-        if broken[i:i + 2] == ["X", "C"]:
-            value += index.get("XC")
-            del broken[i:i+2]
-        if broken[i:i + 2] == ["C", "D"]:
-            value += index.get("CD")
-            del broken[i:i+2]
-        if broken[i:i + 2] == ["C", "M"]:
-            value += index.get("CM")
-            del broken[i:i+2]
-        else:
-            i += 1
-    return value
-
-
-def skimmer(broken, value): 
-    special_total = value
-    for char in broken: #it goes through the modified list
-        special_total += index.get(char, 0) #adds the value
-    return special_total
-if __name__ == '__main__':
-    broken = input_user()
-    value = special_value(broken)
-    special_total = skimmer(broken, value)
-    print(special_total)
+        return value
