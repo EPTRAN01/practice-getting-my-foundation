@@ -1,5 +1,5 @@
 
-index = {
+index = { #the dictionary for the reference
     "I": 1,
     "V": 5,
     "X": 10,
@@ -16,21 +16,21 @@ index = {
 }
 
 
-def input_user():
+def input_user(): #userinput
     s = str(input("roman?: "))
-    broken = list(s)
+    broken = list(s) #makes the characters into an array or list
     return broken
 
 def special_value(broken):
-    value = 0
-    i = 0
-    while i < len(broken) - 1: #this allows it to adapt to the mutated list as it goes throught the special pairs
+    value = 0 #starts the value at 0
+    i = 0 #starts the loop at zero
+    while i < len(broken) - 1: #this allows it to adapt to the mutated list as it goes through the special pairs
         if broken[i:i + 2] == ["I", "V"]:
             value += index.get("IV")
             del broken[i:i+2]
-        if broken[i:i + 2] == ["I", "X"]:
-            value += index.get("IX")
-            del broken[i:i+2]
+        if broken[i:i + 2] == ["I", "X"]: #if statement finding the pair with slicing
+            value += index.get("IX") #adds the special pair to the value
+            del broken[i:i+2] #this modifies/mutates the list deleting the special character
         if broken[i:i + 2] == ["X", "L"]:
             value += index.get("XL")
             del broken[i:i+2]
@@ -48,10 +48,10 @@ def special_value(broken):
     return value
 
 
-def skimmer(broken, value):
+def skimmer(broken, value): 
     special_total = value
-    for char in broken:
-        special_total += index.get(char, 0)
+    for char in broken: #it goes through the modified list
+        special_total += index.get(char, 0) #adds the value
     return special_total
 if __name__ == '__main__':
     broken = input_user()
