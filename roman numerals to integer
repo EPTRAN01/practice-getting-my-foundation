@@ -6,7 +6,13 @@ index = {
     "L": 50,
     "C": 100,
     "D": 500,
-    "M": 1000
+    "M": 1000,
+    "IV": 4,
+    "IX": 9,
+    "XL": 40,
+    "XC": 90,
+    "CD": 400,
+    "CM": 900
 }
 
 
@@ -15,52 +21,36 @@ def input_user():
     broken = list(s)
     return broken
 
+def special_value(broken):
+    value = 0
+    for i in range(len(broken)-1): #I dont need it since its in the function just keeping in case i change
+        if broken[i:i + 2] == ["I", "V"]:
+            value += index.get("IV")
+            del broken[i:i+2]
+        if broken[i:i + 2] == ["I", "X"]:
+            value += index.get("IX")
+            del broken[i:i+2]
+        if broken[i:i + 2] == ["X", "L"]:
+            value += index.get("XL")
+            del broken[i:i+2]
+        if broken[i:i + 2] == ["X", "C"]:
+            value += index.get("XC")
+            del broken[i:i+2]
+        if broken[i:i + 2] == ["C", "D"]:
+            value += index.get("CD")
+            del broken[i:i+2]
+        if broken[i:i + 2] == ["C", "M"]:
+            value += index.get("CM")
+            del broken[i:i+2]
+        value = special_value(broken)
+        return value
 
 
-if i + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "V":
-# I is before V ignore V and I and make into value 4
-if i + 1 < len(broken) and broken[i] == "I" and broken[i + 1] == "X":
-# I is before X ignore it value 9
-if i + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "L":
-# X is before ignore it value 40
-if i + 1 < len(broken) and broken[i] == "X" and broken[i + 1] == "C":
-# X is placed before ignore it value 90
-if i + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "D":
-# C placed before ignore it value 400
-if i + 1 < len(broken) and broken[i] == "C" and broken[i + 1] == "M":
-# C placed before ignore it value 900
+def skimmer(broken, special_total):
+    value = special_total
+    for i in range(len(broken) - 1):
+        value += index.get(broken[i], 0)
 
-
-
-
-
-
-    if #I is before V ignore V and I and make into value 4
-broken[:X]
-    if #I is before X ignore it value 9
-broken[:L]
-    If #X is before ignore it value 40
-broken[:C]
-    if #X is placed before ignore it value 90
-broken[:D]
-    if #C placed before ignore it value 400
-broken[:M]
-    if #C placed before ignore it value 900
-#read from left to right
-
-
-for i in range(len(broken)-1):
-    if broken[i:i + 2] == ["I", "V"]:
-
-    if broken[i:i + 2] == ["I", "X"]:
-
-    if broken[i:i + 2] == ["X", "L"]:
-
-    if broken[i:i + 2] == ["X", "C"]:
-
-    if broken[i:i + 2] == ["C", "D"]:
-
-    if broken[i:i + 2] == ["C", "M"]:
 
 
 
