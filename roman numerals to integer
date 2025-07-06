@@ -23,7 +23,8 @@ def input_user():
 
 def special_value(broken):
     value = 0
-    for i in range(len(broken)-1): #I dont need it since its in the function just keeping in case i change
+    i = 0
+    while i < len(broken) - 1: #this allows it to adapt to the mutated list as it goes throught the special pairs
         if broken[i:i + 2] == ["I", "V"]:
             value += index.get("IV")
             del broken[i:i+2]
@@ -42,17 +43,18 @@ def special_value(broken):
         if broken[i:i + 2] == ["C", "M"]:
             value += index.get("CM")
             del broken[i:i+2]
-        value = special_value(broken)
-        return value
+        else:
+            break
+    return value
 
 
-def skimmer(broken, special_total):
-    value = special_total
-    for i in range(len(broken) - 1):
-        value += index.get(broken[i], 0)
-
-
-
-
-
-
+def skimmer(broken, value):
+    special_total = value
+    for char in broken:
+        special_total += index.get(char, 0)
+    return special_total
+if __name__ == '__main__':
+    broken = input_user()
+    value = special_value(broken)
+    special_total = skimmer(broken, value)
+    print(special_total)
