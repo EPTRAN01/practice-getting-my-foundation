@@ -1,0 +1,48 @@
+def input_user():
+    p1_gene1 = input("Please enter gene 1 of parent 1")
+    p1_gene1.lower()
+    p1_gene2 = input("Please enter gene 2 of parent 1")
+    p1_gene2.lower()
+
+    p2_gene1 = input("Please enter gene 1 of parent 2")
+    p2_gene1.lower()
+    p2_gene2 = input("Please enter gene 2 of parent 2")
+    p2_gene2.lower()
+
+
+    p1 = Parent(self, p1_gene1, p1_gene2)
+    p2 = Parent(self, p2_gene1, p2_gene2)
+    return p1, p2
+
+
+def eyecolor(p1, p2):
+    dominant = brown
+    recessive = blue
+    p1*p2 #parent 1 is the top side of the table and the parent two is the side
+    top_left = p1.p1_gene1 and p2.p2_gene1
+    bottom_left = p1.p1_gene1 and p2.p2_gene2
+    top_right = p1.p1_gene2 and p1.p1_gene1
+    bottom_right = p1.p1_gene2 and p1.p1_gene2
+    g1+g1, g1+g2
+    g2+g1, g2+g1
+
+    #checker
+    check combination of brown and blue(and the reverse version)
+    check combination brown and brown
+    check combination blue and blue
+    #out of 4 get the percentage 
+
+
+def child(p1, p2):
+    c = eye_color(p1, p2)
+
+
+def outcome():
+    print("Parent 1 genes:", p1.gene1, p1.gene2)
+    print("Parent 2 genes:", p2.gene1, p2.gene2)
+    print("Child gene 1:", c.gene1)
+    print("Child gene 2:", c.gene2)
+    print("Child eye color:", c.eye_color)
+
+
+if __name__ == '__main__':
