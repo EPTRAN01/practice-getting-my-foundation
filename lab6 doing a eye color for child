@@ -1,28 +1,54 @@
+import random
+
+class Parent:
+    def __init__(self, gene1, gene2):
+        self.gene1 = gene1.lower()
+        self.gene2 = gene2.lower()
+
+class child:
+    def __init__(self, parent1, parent2):
+        self.gene1 = random.choice()
+
+
 def input_user():
     p1_gene1 = input("Please enter gene 1 of parent 1")
-    p1_gene1.lower()
     p1_gene2 = input("Please enter gene 2 of parent 1")
-    p1_gene2.lower()
+
 
     p2_gene1 = input("Please enter gene 1 of parent 2")
-    p2_gene1.lower()
     p2_gene2 = input("Please enter gene 2 of parent 2")
-    p2_gene2.lower()
 
 
-    p1 = Parent(self, p1_gene1, p1_gene2)
-    p2 = Parent(self, p2_gene1, p2_gene2)
+    p1 = Parent(p1_gene1, p1_gene2)
+    p2 = Parent(p2_gene1, p2_gene2)
     return p1, p2
+
+
+
+
+
+
+
+#this one is correct so far
+
+
+
 
 
 def eyecolor(p1, p2):
     dominant = brown
     recessive = blue
     p1*p2 #parent 1 is the top side of the table and the parent two is the side
-    top_left = p1.p1_gene1 and p2.p2_gene1
-    bottom_left = p1.p1_gene1 and p2.p2_gene2
-    top_right = p1.p1_gene2 and p1.p1_gene1
-    bottom_right = p1.p1_gene2 and p1.p1_gene2
+
+    top_left = [p1.p1_gene1, p2.p2_gene1]
+    c_top_left = " ".join(top_left)
+
+    bottom_left = [p1.p1_gene1, p2.p2_gene2]
+    c_bottom_left = " ".join(bottom_left)
+
+    top_right = [p1.p1_gene2, p1.p1_gene1]
+
+    bottom_right = [p1.p1_gene2, p1.p1_gene2]
     g1+g1, g1+g2
     g2+g1, g2+g1
 
@@ -30,8 +56,8 @@ def eyecolor(p1, p2):
     check combination of brown and blue(and the reverse version)
     check combination brown and brown
     check combination blue and blue
-    #out of 4 get the percentage 
-
+    #out of 4 get the percentage
+ 
 
 def child(p1, p2):
     c = eye_color(p1, p2)
