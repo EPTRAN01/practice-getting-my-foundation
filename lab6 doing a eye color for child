@@ -7,7 +7,16 @@ class Parent:
 
 class child:
     def __init__(self, parent1, parent2):
-        self.gene1 = random.choice()
+        self.gene1 = random.choice([parent1.gene1, parent1.gene2])
+        self.gene2 = random.choice([parent2.gene1, parent2.gene2])
+        self.eye_color = self.determine_eye_color
+
+    def determine_eye_color(self):
+
+            if "brown" in [self.gene1, self.gene2]:
+                return "Brown"
+            else:
+                return "Blue"
 
 
 def input_user():
@@ -24,51 +33,3 @@ def input_user():
     return p1, p2
 
 
-
-
-
-
-
-#this one is correct so far
-
-
-
-
-
-def eyecolor(p1, p2):
-    dominant = brown
-    recessive = blue
-    p1*p2 #parent 1 is the top side of the table and the parent two is the side
-
-    top_left = [p1.p1_gene1, p2.p2_gene1]
-    c_top_left = " ".join(top_left)
-
-    bottom_left = [p1.p1_gene1, p2.p2_gene2]
-    c_bottom_left = " ".join(bottom_left)
-
-    top_right = [p1.p1_gene2, p1.p1_gene1]
-
-    bottom_right = [p1.p1_gene2, p1.p1_gene2]
-    g1+g1, g1+g2
-    g2+g1, g2+g1
-
-    #checker
-    check combination of brown and blue(and the reverse version)
-    check combination brown and brown
-    check combination blue and blue
-    #out of 4 get the percentage
- 
-
-def child(p1, p2):
-    c = eye_color(p1, p2)
-
-
-def outcome():
-    print("Parent 1 genes:", p1.gene1, p1.gene2)
-    print("Parent 2 genes:", p2.gene1, p2.gene2)
-    print("Child gene 1:", c.gene1)
-    print("Child gene 2:", c.gene2)
-    print("Child eye color:", c.eye_color)
-
-
-if __name__ == '__main__':
